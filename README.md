@@ -6,14 +6,19 @@ Source code for the talk *Polars: Zero To Hero* at Agile Lab.
 
 ## 🛩️ How to run
 
+### Prerequisites
+
 Make sure you have installed the following:
 
-* `git` (of course).
-* GitHub CLI: `gh` (optional).
-* `node.js` or `bun`.
-* `just` is a command runner (optional, recommended for contributing).
+* [`git`](https://git-scm.com/).
+* [`node.js`](https://nodejs.org/en/download/package-manager) or [`bun`](https://bun.sh/).
 
-1. Clone the repo
+Recommended:
+
+* [`gh`](https://cli.github.com/), the GitHub CLI.
+* [`just`](https://just.systems/), a command runner.
+
+### 1. Clone the repo
 
 ```bash
 # with github CLI
@@ -28,10 +33,10 @@ git clone git@github.com:baggiponte/agilelab-2024-polars
 > 🎬 How to configure SSH
 >
 > Cloning over SSH is safer. Follow [this guide](https://www.youtube.com/watch?v=5o9ltH6YmtM).
-> Alternatively, you can follow the steps in [this](https://github.com/git-merge-workshops/simplify-signing-with-ssh/blob/main/exercises/01-setup-workstation.md) workshop of GitHub's.
+> Alternatively, you can follow the steps in [this](https://github.com/git-merge-workshops/simplify-signing-with-ssh/blob/main/exercises/01-setup-workstation.md) workshop from GitHub.
 
 
-2. Install the dependencies
+### 2. Install the dependencies
 
 ```bash
 # with the command runner
@@ -44,7 +49,7 @@ npm install
 bun install
 ```
 
-3. Open the slideshow locally
+### 3. Preview the slideshow locally
 
 ```bash
 # with the command runner
@@ -57,7 +62,7 @@ npx slidev --open -- slides.md
 bun slidev --open -- slides.md
 ```
 
-4. Visit http://localhost:3030
+Visit http://localhost:3030 to preview the slideshow.
 
 ## 🤗 contributing
 
