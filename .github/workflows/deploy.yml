@@ -23,8 +23,11 @@ jobs:
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
 
+      - name: Install dependencies
+        run: bun install
+
       - name: Build HTML
-        run: bunx slidev build --base=/agilelab-2024-polars
+        run: bun slidev build --base=/agilelab-2024-polars
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
