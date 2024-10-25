@@ -34,7 +34,6 @@ What it is, when to use it, and how to get started
 
 </v-clicks>
 
-
 ---
 
 # 📍 Talk outline
@@ -61,7 +60,6 @@ What it is, when to use it, and how to get started
 
 </v-clicks>
 
-
 ---
 
 # 🐻‍❄️ What is Polars?
@@ -79,7 +77,6 @@ In a nutshell
 
 </v-clicks>
 
-
 ---
 
 # 🐻‍❄️ What is Polars?
@@ -92,7 +89,6 @@ In plain terms
 * Like `duckdb` but not SQL-first (though you can use SQL too!).
 
 </v-clicks>
-
 
 ---
 
@@ -114,7 +110,6 @@ Polars, however, can increase your data processing capabilities so much that you
 
 </v-clicks>
 
-
 ---
 
 # 🚀 What makes Polars so fast?
@@ -135,7 +130,6 @@ The key ingredients
 For a thorough introduction by its author, you should check out [this](https://www.youtube.com/watch?v=tqcudsykOGc) and [this](https://www.youtube.com/watch?v=GOOYbl3cqlc) videos.
 </v-click>
 
-
 ---
 
 # 🚀 What makes Polars so fast?
@@ -152,7 +146,6 @@ Arrow is a cross-language specification on how to represent data in memory.
 
 </v-clicks>
 
-
 ---
 
 # 🚀 What makes Polars so fast?
@@ -167,7 +160,6 @@ Apache Arrow (cont'd)
 
 </v-clicks>
 
-
 ---
 
 # 🚀 What makes Polars so fast?
@@ -180,14 +172,12 @@ Polars does not simply implement multithreading. It builds and extends `rayon` t
 The idea is pretty simple: every thread has a queue of tasks to execute. When a thread finishes its task, it steals the next one from the queue.
 </v-clicks>
 
-
 ---
 
 # 🚀 What makes Polars so fast?
 Extensive optimisations through lazy evaluation
 
 Polars has two modes: lazy and eager (more on this later). In the lazy mode, Polars builds a query plan which can optimise extensively, for example by removing unnecessary expressions as well as branches in the computation and automatically cache bits of data that will be re-used.
-
 
 ---
 
@@ -203,7 +193,6 @@ Yes.
 3. NumFOCUS affiliated project.
 
 </v-clicks>
-
 
 ---
 
@@ -270,7 +259,6 @@ data = pl.read_*("/path/to/source.*")
 data.write_*("path/to/destination.*")
 ```
 
-
 ---
 
 # 📚 Appendix 1: Small Polars compendium
@@ -287,7 +275,6 @@ processed = raw.pipe(etl, *args, **kwargs)
 processed.sink_parquet("path/to/destination.*")
 ```
 
-
 ---
 
 # 📚 Appendix 1: Small Polars compendium
@@ -299,7 +286,6 @@ raw = pd.read_*("path/to/source.weird.format")
 
 data = pl.from_pandas(raw)
 ```
-
 
 ---
 
@@ -318,7 +304,6 @@ raw.select(
   pl.all().exclude(...)     # names, regex, types...
 )
 ```
-
 
 ---
 
@@ -345,7 +330,6 @@ raw.select(
 )
 ```
 
-
 ---
 
 # 📚 Appendix 1: Small Polars compendium
@@ -362,7 +346,6 @@ raw.select(
   )
 )
 ```
-
 
 ---
 
@@ -399,7 +382,6 @@ layout: intro
 
 # ✋ Another round of questions
 
-
 ---
 layout: intro
 ---
@@ -416,4 +398,3 @@ Please share your feedback!
 <div class="absolute bottom-10">
 lucabaggi [at] xtreamers.io | Material will be shared soon
 </div>
-
