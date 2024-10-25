@@ -1,8 +1,8 @@
-# Polars: Zero To Hero
+# Polars: Zero to Hero
 
 [![cookiecutter slidev](https://img.shields.io/badge/cookiecutter-slidev-D4AA00?logo=cookiecutter&logoColor=fff)](https://github.com/baggiponte/cookiecutter-slidev)
 
-Source code for the talk *Polars: Zero To Hero* at Agile Lab.
+Source code for the talk *Polars: Zero to Hero* at Agile Lab. Introduction to the [Polars](https://www.pola.rs/) as well as [functime](https://www.functime.ai)
 
 ## 🛩️ How to run
 
@@ -11,12 +11,11 @@ Source code for the talk *Polars: Zero To Hero* at Agile Lab.
 Make sure you have installed the following:
 
 * [`git`](https://git-scm.com/).
-* [`node.js`](https://nodejs.org/en/download/package-manager) or [`bun`](https://bun.sh/).
-
-Recommended:
-
-* [`gh`](https://cli.github.com/), the GitHub CLI.
+* [`bun`](https://bun.sh/) (but you can use any other JavaScript runtime).
 * [`just`](https://just.systems/), a command runner.
+  * The [`justfile`](./justfile) contains a bunch of utilities to ease development. Though optional, it's highly recommended.
+* [`gh`](https://cli.github.com/), the GitHub CLI.
+  * This is optional too, but recommended.
 
 ### 1. Clone the repo
 
@@ -33,52 +32,53 @@ git clone git@github.com:baggiponte/agilelab-2024-polars
 > 🎬 How to configure SSH
 >
 > Cloning over SSH is safer. Follow [this guide](https://www.youtube.com/watch?v=5o9ltH6YmtM).
-> Alternatively, you can follow the steps in [this](https://github.com/git-merge-workshops/simplify-signing-with-ssh/blob/main/exercises/01-setup-workstation.md) workshop from GitHub.
-
+> Alternatively, you can follow the steps in [this](https://github.com/git-merge-workshops/simplify-signing-with-ssh/blob/main/exercises/01-setup-workstation.md) workshop of GitHub's.
 
 ### 2. Install the dependencies
 
 ```bash
 # with the command runner
 just install
-
-# with npm
-npm install
-
-# with bun
-bun install
 ```
 
-### 3. Preview the slideshow locally
+### 3. Open the slideshow locally
 
 ```bash
 # with the command runner
 just preview
-
-# with npx
-npx slidev --open -- slides.md
-
-# with bun
-bun slidev --open -- slides.md
 ```
 
-Visit http://localhost:3030 to preview the slideshow.
+Visit http://localhost:3030
 
 ## 🤗 contributing
 
-Install the dependencies [above](,/README.md#%EF%B8%8F-how-to-run) (`just` is highly recommended) and the following:
+### Prerequisites
 
-* [`commitizen`](https://commitizen-tools.github.io/commitizen/) is a release management tool. It's used to release new versions.
+* Install all of the the dependencies [above](./README.md#%EF%B8%8F-how-to-run) and [`commitizen`](https://commitizen-tools.github.io/commitizen/). `commitizen` is a release management tool. It's used to release new versions.
 
-1. Fork the repo
+### Release workflow
+
+1. Fork the repo:
+
+```bash
+gh repo fork baggiponte/agilelab-2024-polars
+```
+
 2. Create your own branch.
-3. Before opening a PR, run the following:
+
+```bash
+git checkout -b your-branch-name
+```
+
+3. Commit following the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+
+4. Before pushing your changes, run the following command to check if the version bump is possible.
 
 ```bash
 just test-release
 ```
 
-This will format the slides, try to build them and test whether a version bump is possibile.
+This will format the slides, try to build them and test whether a version bump is possible.
 
 ## 🙏 Credits
 
