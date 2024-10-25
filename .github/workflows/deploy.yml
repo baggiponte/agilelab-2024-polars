@@ -20,16 +20,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.tool-versions'
-
-      - name: Install dependencies
-        run: npm install
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Build HTML
-        run: npx slidev build --base=/agilelab-2024-polars
+        run: bunx slidev build --base=/agilelab-2024-polars
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
