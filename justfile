@@ -1,5 +1,4 @@
 set shell := ["zsh", "-uc"]
-set positional-arguments := true
 
 # List all available recipes
 @help:
@@ -7,8 +6,7 @@ set positional-arguments := true
 
 # Install dependencies
 [group('install')]
-@install:
-    {{ just_executable() }} needs bun
+@install: (needs "bun")
     bun install
 
     print "\n⚠️ A manual step is required to deploy the slideshow to GitHub Pages:"
@@ -49,8 +47,7 @@ init: ensure-git ensure-github install
 
 # Test the release bump
 [group('release')]
-@test-bump:
-    {{ just_executable() }} needs cz
+@test-bump: (needs "cz")
     cz bump --check-consistency --dry-run
 
 # Test the release workflow
@@ -78,9 +75,8 @@ needs *commands:
 
 # Create a local git repo if not in one
 [private]
-ensure-git:
+ensure-git: (needs "git")
     #! /usr/bin/env zsh
-    {{ just_executable() }} needs git
     if ! git rev-parse --is-inside-work-tree &> /dev/null; then
       git init
     fi
