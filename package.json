@@ -1,9 +1,0 @@
-{
-  "name": "agilelab-2024-polars",
-  "private": true,
-  "dependencies": {
-    "@slidev/cli": "^0.49",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest"
-  }
-}
